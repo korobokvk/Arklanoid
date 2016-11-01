@@ -17,11 +17,13 @@ init();
 var x = 15;
 
 var game = function () {
-  //fillAll('#ADD8E6');
-  drawRect(x, 15, 45, 56, 'blue')  
+  fillAll('#ADD8E6');
+  drawRect(x, 460, 100, 10, 'blue')  
 
   if(isKeyDown('D'))
-  x+=4
+  x++
+  if(isKeyDown('A'))
+  x--
 };
 
 startGame(game)
