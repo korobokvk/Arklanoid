@@ -9,6 +9,7 @@
 <script type="text/javascript" src="engine.js"></script> 
 <script type="text/javascript" src="graph.js"></script> 
 <script type="text/javascript" src="player.js"></script> 
+<script type="text/javascript" src="grid.js"></script>
 
 <canvas id="canvas" width="640" height="480"></canvas>
 
@@ -16,16 +17,18 @@
 init();
 
 
+
+grid.generate(5, 60, 30, 'red')
+
+
 var game = function () {
   fillAll('#ADD8E6');
+  grid.draw();  
   player.move();
   player.draw();
 };
 
-startGame(game)
-
-
-     
+startGame(game)     
 </script>
 </body>
 </html>
