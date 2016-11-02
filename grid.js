@@ -26,6 +26,7 @@ var grid = {
 	},
 
 	destroy : function (id) {
+		this.nodes.splice(id, 1);
 
 	},
 

@@ -10,22 +10,28 @@
 <script type="text/javascript" src="graph.js"></script> 
 <script type="text/javascript" src="player.js"></script> 
 <script type="text/javascript" src="grid.js"></script>
+<script type="text/javascript" src="ball.js"></script>
 
 <canvas id="canvas" width="640" height="480"></canvas>
 
 <script type="text/javascript">
 init();
 
-
-
-grid.generate(5, 60, 30, 'red')
+grid.generate(5, 60, 30, 'green');
+ball.init(player.x + Math.ceil(player.width / 2), player.y - 5, 5, 'blue');
 
 
 var game = function () {
   fillAll('#ADD8E6');
-  grid.draw();  
+  grid.draw();
+
+  ball.collision()
+  ball.move();
+  ball.draw();
+
   player.move();
   player.draw();
+  player.collision();
 };
 
 startGame(game)     
