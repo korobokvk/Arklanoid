@@ -18,6 +18,14 @@ var clearKey = function (keyCode) {
 var isKeyDown = function(keyName) {
 	return keyDown[keys[keyName]] == true;
 };
+
+var isAnyKeyDown = function () {
+	for (var k in keyDown) {
+		if (keyDown[k])
+			return true;
+	}
+};
+
 window.onload = function() {
 
 	window.onkeydown = function(e) {

@@ -25,6 +25,24 @@ var grid = {
 		}
 	},
 
+	create : function (map) {
+		var dOffsetX = (width - (map.tiles[0].length * (map.width + map.offset))) / 2;
+  		for (var t1 in map.tiles) {
+      	for (var t2 in map.tiles[t1]) {
+        var tile = map.tiles[t1][t2];
+        var dx = dOffsetX + t2 * (map.width + map.offset);
+        var dy = map.offset + t1 * (map.height + map.offset);
+        if (tile == 1) {
+            this.add(dx, dy, map.width, map.height, map.color);
+          }
+    	}
+  	}
+},
+
+clear : function () {
+this.nodes = [];
+},
+
 	destroy : function (id) {
 		this.nodes.splice(id, 1);
 
